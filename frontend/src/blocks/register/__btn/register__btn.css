@@ -1,0 +1,12 @@
+.register__btn {
+  margin-bottom: 15px;
+  padding: 14px;
+  border-radius: 2px;
+  width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  background-color: #fff;
+  text-align: center;
+}

@@ -1,0 +1,9 @@
+.header__link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
