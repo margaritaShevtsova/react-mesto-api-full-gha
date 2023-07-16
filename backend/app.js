@@ -15,11 +15,12 @@ const userRouter = require('./routes/users');
 const { login, createUser } = require('./controllers/users');
 const { errorHandler } = require('./middlewares/errorHandler');
 const NotFoundError = require('./errors/not-found-err');
+const { corsHandler } = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 
 const app = express();
-app.use(cors({ origin: 'https://shevtsova.mesto.nomoredomains.xyz', credentials: true }));
+app.use(cors({ credentials: true }));
 app.use(cookieParser());
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
@@ -29,6 +30,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
 app.use(helmet());
 
 app.use(express.json());
+
+app.use(corsHandler);
 
 app.use(requestLogger);
 
