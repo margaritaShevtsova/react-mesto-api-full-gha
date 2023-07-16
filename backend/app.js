@@ -15,7 +15,11 @@ const userRouter = require('./routes/users');
 const { login, createUser } = require('./controllers/users');
 const { errorHandler } = require('./middlewares/errorHandler');
 const NotFoundError = require('./errors/not-found-err');
-const { corsHandler } = require('./middlewares/cors');
+
+const allowedCors = [
+  'https://shevtsova.mesto.nomoredomains.xyz',
+  'localhost:3000',
+];
 
 const { PORT = 3000 } = process.env;
 
@@ -31,7 +35,14 @@ app.use(helmet());
 
 app.use(express.json());
 
-app.use(corsHandler);
+app.use((req, res, next) => {
+  const { origin } = req.headers;
+  if (allowedCors.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+
+  next();
+});
 
 app.use(requestLogger);
 
