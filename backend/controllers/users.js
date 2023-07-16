@@ -8,6 +8,8 @@ const ValidationError = require('../errors/validation-err');
 const NotFoundError = require('../errors/not-found-err');
 const UnauthorizedError = require('../errors/unauthorized-err');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 const getUsers = (req, res, next) => User.find({}).then((users) => res.send(users))
   .catch(next);
 
@@ -82,7 +84,7 @@ const login = (req, res, next) => {
           }
           const token = jwt.sign(
             { _id: user._id },
-            'some-secret-key',
+            NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key',
           );
           return res
             .cookie('jwt', token, {
