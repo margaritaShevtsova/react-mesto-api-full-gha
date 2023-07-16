@@ -102,7 +102,7 @@ class Api {
 }
 
 const api = new Api({
-  adress: "http://api.shevtsova.mesto.nomoredomains.xyz"
+  adress: "https://api.shevtsova.mesto.nomoredomains.xyz"
 });
 
 export default api;
