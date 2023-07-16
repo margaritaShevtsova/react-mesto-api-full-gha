@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:4000";
+export const BASE_URL = "http://api.shevtsova.mesto.nomoredomains.xyz";
 
 function _checkResponseStatus(res) {
   if (res.ok) {

@@ -102,7 +102,7 @@ class Api {
 }
 
 const api = new Api({
-  adress: "http://localhost:4000"
+  adress: "http://api.shevtsova.mesto.nomoredomains.xyz"
 });
 
 export default api;

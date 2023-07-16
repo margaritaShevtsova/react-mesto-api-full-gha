@@ -17,7 +17,7 @@ const NotFoundError = require('./errors/not-found-err');
 const { PORT = 4000 } = process.env;
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: 'http://shevtsova.mesto.nomoredomains.xyz', credentials: true }));
 app.use(cookieParser());
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
