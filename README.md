@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.79.71
+IP 51.250.79.71
 
 Frontend https://shevtsova.mesto.nomoredomains.xyz
 
