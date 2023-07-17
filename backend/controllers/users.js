@@ -91,7 +91,9 @@ const login = (req, res, next) => {
               maxAge: 3600000,
               httpOnly: true,
               sameSite: true,
-            }).status(200).send({ user });
+            }).status(200).send({
+              email: user.email, name: user.name, about: user.about, avatar: user.avatar,
+            });
         });
     })
     .catch((err) => {
